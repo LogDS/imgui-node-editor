@@ -1,8 +1,8 @@
-# include "renderer.h"
+#include <imgui-node-editor/renderer.h>
 
 # if RENDERER(IMGUI_OGL3)
 
-# include "platform.h"
+#include <imgui-node-editor/platform.h>
 # include <algorithm>
 # include <cstdint> // std::intptr_t
 
@@ -12,7 +12,7 @@
 #     include <windows.h>
 # endif
 
-# include "imgui_impl_opengl3.h"
+#include <imgui-node-editor/imgui_impl_opengl3.h>
 
 # if defined(IMGUI_IMPL_OPENGL_LOADER_GL3W)
 #     include <GL/gl3w.h>            // Initialize with gl3wInit()
@@ -35,7 +35,7 @@ using namespace gl;
 # elif defined(IMGUI_IMPL_OPENGL_LOADER_CUSTOM)
 #     include IMGUI_IMPL_OPENGL_LOADER_CUSTOM
 # else
-#     include "imgui_impl_opengl3_loader.h"
+#     include <imgui-node-editor/imgui_impl_opengl3_loader.h>
 # endif
 
 struct ImTexture

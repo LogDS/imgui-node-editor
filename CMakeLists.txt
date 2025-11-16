@@ -10,21 +10,21 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/misc/cmake-modules)
 include_directories(include)
 
 set(_Application_Sources
-    include/application.h
+        include/imgui-node-editor/application.h
     src/application.cpp
     src/entry_point.cpp
-    include/imgui_extra_keys.h
-    include/config.h.in
-    include/setup.h
-    include/platform.h
+        include/imgui-node-editor/imgui_extra_keys.h
+        include/imgui-node-editor/config.h.in
+        include/imgui-node-editor/setup.h
+        include/imgui-node-editor/platform.h
     src/platform_win32.cpp
     src/platform_glfw.cpp
-    include/renderer.h
+        include/imgui-node-editor/renderer.h
     src/renderer_dx11.cpp
     src/renderer_ogl3.cpp
-        include/builders.h
-    include/drawing.h
-    include/widgets.h
+        include/imgui-node-editor/builders.h
+        include/imgui-node-editor/drawing.h
+        include/imgui-node-editor/widgets.h
     src/builders.cpp
     src/drawing.cpp
     src/widgets.cpp
@@ -43,9 +43,9 @@ target_link_libraries(imgui-node-editor PRIVATE stb_image ScopeGuard)
 if (WIN32)
     list(APPEND _Application_Sources
         src/imgui_impl_dx11.cpp
-        include/imgui_impl_dx11.h
+            include/imgui-node-editor/imgui_impl_dx11.h
         src/imgui_impl_win32.cpp
-        include/imgui_impl_win32.h
+            include/imgui-node-editor/imgui_impl_win32.h
     )
 
     set(_DXSDK_Dir  ${IMGUI_NODE_EDITOR_ROOT_DIR}/external/DXSDK)
@@ -88,8 +88,8 @@ if (OpenGL_FOUND)
     target_link_libraries(imgui-node-editor PRIVATE ${OPENGL_gl_LIBRARY})
     list(APPEND _Application_Sources
         src/imgui_impl_opengl3.cpp
-        include/imgui_impl_opengl3.h
-        include/imgui_impl_opengl3_loader.h
+            include/imgui-node-editor/imgui_impl_opengl3.h
+            include/imgui-node-editor/imgui_impl_opengl3_loader.h
     )
 endif()
 
@@ -98,7 +98,7 @@ if (glfw3_FOUND)
 
     list(APPEND _Application_Sources
         src/imgui_impl_glfw.cpp
-        include/imgui_impl_glfw.h
+            include/imgui-node-editor/imgui_impl_glfw.h
     )
     target_link_libraries(imgui-node-editor PRIVATE
         glfw
@@ -106,7 +106,7 @@ if (glfw3_FOUND)
 endif()
 
 configure_file(
-    include/config.h.in
+        include/imgui-node-editor/config.h.in
     ${CMAKE_CURRENT_BINARY_DIR}/source/config.h
 )
 

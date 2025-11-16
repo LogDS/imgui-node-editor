@@ -8,8 +8,8 @@
 //  [X] Platform: Gamepad support. Enabled with 'io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad'.
 
 #include "imgui.h"
-#include "imgui_impl_win32.h"
-#include "imgui_extra_keys.h"
+#include <imgui-node-editor/imgui_impl_win32.h>
+#include <imgui-node-editor/imgui_extra_keys.h>
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif

@@ -1,9 +1,9 @@
-# include "renderer.h"
-# include "setup.h"
+#include <imgui-node-editor/renderer.h>
+# include <imgui-node-editor/setup.h>
 
 # if RENDERER(IMGUI_DX11)
 
-# include "platform.h"
+# include <imgui-node-editor/platform.h>
 
 # if PLATFORM(WINDOWS)
 #     define NOMINMAX
@@ -12,7 +12,7 @@
 # endif
 
 # include <imgui.h>
-# include "imgui_impl_dx11.h"
+# include <imgui-node-editor/imgui_impl_dx11.h>
 # include <d3d11.h>
 
 

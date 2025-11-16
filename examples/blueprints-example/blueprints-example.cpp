@@ -1,9 +1,9 @@
 #define IMGUI_DEFINE_MATH_OPERATORS
-#include <application.h>
-#include "builders.h"
-#include "widgets.h"
+#include <imgui-node-editor/application.h>
+#include "imgui-node-editor/builders.h"
+#include "imgui-node-editor/widgets.h"
 
-#include <imgui_node_editor.h>
+#include <imgui-node-editor/imgui_node_editor.h>
 #include <imgui_internal.h>
 
 #include <string>

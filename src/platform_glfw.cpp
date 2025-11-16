@@ -1,10 +1,10 @@
-# include "platform.h"
-# include "setup.h"
+#include "../include/imgui-node-editor/platform.h"
+#include "../include/imgui-node-editor/setup.h"
 
 # if BACKEND(IMGUI_GLFW)
 
-# include "application.h"
-# include "renderer.h"
+#include <imgui-node-editor/application.h>
+# include <imgui-node-editor/renderer.h>
 
 # include <GLFW/glfw3.h>
 
@@ -14,7 +14,7 @@
 # endif
 
 # include <imgui.h>
-# include "imgui_impl_glfw.h"
+#include "../include/imgui-node-editor/imgui_impl_glfw.h"
 
 struct PlatformGLFW final
     : Platform

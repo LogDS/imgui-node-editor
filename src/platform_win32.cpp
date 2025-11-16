@@ -1,10 +1,10 @@
-# include "platform.h"
-# include "setup.h"
+#include "../include/imgui-node-editor/platform.h"
+#include "../include/imgui-node-editor/setup.h"
 
 # if BACKEND(IMGUI_WIN32)
 
-# include "application.h"
-# include "renderer.h"
+# include <imgui-node-editor/application.h>
+# include <imgui-node-editor/renderer.h>
 
 # define NOMINMAX
 # define WIN32_LEAN_AND_MEAN
@@ -13,7 +13,7 @@
 # include <string>
 
 # include <imgui.h>
-# include "imgui_impl_win32.h"
+# include <imgui-node-editor/imgui_impl_win32.h>
 
 # if defined(_UNICODE)
 std::wstring Utf8ToNative(const std::string& str)

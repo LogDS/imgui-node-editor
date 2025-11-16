@@ -10,21 +10,21 @@ endif()
 find_package(imgui REQUIRED)
 
 set(_imgui_node_editor_Sources
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/crude_json.cpp
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/crude_json.h
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_bezier_math.h
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_bezier_math.inl
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_canvas.cpp
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_canvas.cpp
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_canvas.h
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_canvas.h
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_extra_math.h
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_extra_math.inl
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_node_editor_api.cpp
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_node_editor_internal.h
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_node_editor_internal.inl
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_node_editor.cpp
-    ${IMGUI_NODE_EDITOR_ROOT_DIR}/imgui_node_editor.h
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/src/crude_json.cpp
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/crude_json.h
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/imgui_bezier_math.h
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/imgui_bezier_math.inl
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/src/imgui_canvas.cpp
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/src/imgui_canvas.cpp
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/imgui_canvas.h
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/imgui_canvas.h
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/imgui_extra_math.h
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/imgui_extra_math.inl
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/src/imgui_node_editor_api.cpp
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/imgui_node_editor_internal.h
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/imgui_node_editor_internal.inl
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/src/imgui_node_editor.cpp
+    ${IMGUI_NODE_EDITOR_ROOT_DIR}/include/imgui-node-editor/imgui_node_editor.h
     ${IMGUI_NODE_EDITOR_ROOT_DIR}/misc/imgui_node_editor.natvis
 )
 

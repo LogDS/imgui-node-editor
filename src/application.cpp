@@ -1,7 +1,7 @@
-# include "application.h"
-# include "setup.h"
-# include "platform.h"
-# include "renderer.h"
+#include <imgui-node-editor/application.h>
+# include <imgui-node-editor/setup.h>
+#include <imgui-node-editor/platform.h>
+#include <imgui-node-editor/renderer.h>
 
 extern "C" {
 #define STB_IMAGE_IMPLEMENTATION

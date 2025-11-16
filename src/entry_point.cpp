@@ -1,5 +1,5 @@
-# include "application.h"
-# include "platform.h"
+#include <imgui-node-editor/application.h>
+#include <imgui-node-editor/platform.h>
 
 # if PLATFORM(WINDOWS)
 #     define NOMINMAX

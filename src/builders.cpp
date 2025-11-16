@@ -8,7 +8,7 @@
 //   Written by Michal Cichon
 //------------------------------------------------------------------------------
 # define IMGUI_DEFINE_MATH_OPERATORS
-# include "builders.h"
+#include <imgui-node-editor/builders.h>
 # include <imgui_internal.h>
 
 

@@ -24,7 +24,7 @@
 //  2016-05-07: DirectX11: Disabling depth-write.
 
 #include "imgui.h"
-#include "imgui_impl_dx11.h"
+#include <imgui-node-editor/imgui_impl_dx11.h>
 
 // DirectX
 struct IUnknown;

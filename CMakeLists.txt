@@ -7,22 +7,27 @@ set(IMGUI_NODE_EDITOR_ROOT_DIR ${CMAKE_CURRENT_LIST_DIR})
 # Point CMake where to look for module files.
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/misc/cmake-modules)
 
-include_directories(examples/application/include)
-include_directories(examples/application/source)
+include_directories(include)
 
 set(_Application_Sources
-    examples/application/include/application.h
-    examples/application/source/application.cpp
-    examples/application/source/entry_point.cpp
-    examples/application/source/imgui_extra_keys.h
-    examples/application/source/config.h.in
-    examples/application/source/setup.h
-    examples/application/source/platform.h
-    examples/application/source/platform_win32.cpp
-    examples/application/source/platform_glfw.cpp
-    examples/application/source/renderer.h
-    examples/application/source/renderer_dx11.cpp
-    examples/application/source/renderer_ogl3.cpp
+    include/application.h
+    src/application.cpp
+    src/entry_point.cpp
+    include/imgui_extra_keys.h
+    include/config.h.in
+    include/setup.h
+    include/platform.h
+    src/platform_win32.cpp
+    src/platform_glfw.cpp
+    include/renderer.h
+    src/renderer_dx11.cpp
+    src/renderer_ogl3.cpp
+        include/builders.h
+    include/drawing.h
+    include/widgets.h
+    src/builders.cpp
+    src/drawing.cpp
+    src/widgets.cpp
 )
 
 add_library(imgui-node-editor STATIC)
@@ -37,10 +42,10 @@ target_link_libraries(imgui-node-editor PRIVATE stb_image ScopeGuard)
 
 if (WIN32)
     list(APPEND _Application_Sources
-        examples/application/source/imgui_impl_dx11.cpp
-        examples/application/source/imgui_impl_dx11.h
-        examples/application/source/imgui_impl_win32.cpp
-        examples/application/source/imgui_impl_win32.h
+        src/imgui_impl_dx11.cpp
+        include/imgui_impl_dx11.h
+        src/imgui_impl_win32.cpp
+        include/imgui_impl_win32.h
     )
 
     set(_DXSDK_Dir  ${IMGUI_NODE_EDITOR_ROOT_DIR}/external/DXSDK)
@@ -82,9 +87,9 @@ if (OpenGL_FOUND)
     target_include_directories(imgui-node-editor PRIVATE ${OPENGL_INCLUDE_DIR})
     target_link_libraries(imgui-node-editor PRIVATE ${OPENGL_gl_LIBRARY})
     list(APPEND _Application_Sources
-        examples/application/source/imgui_impl_opengl3.cpp
-        examples/application/source/imgui_impl_opengl3.h
-        examples/application/source/imgui_impl_opengl3_loader.h
+        src/imgui_impl_opengl3.cpp
+        include/imgui_impl_opengl3.h
+        include/imgui_impl_opengl3_loader.h
     )
 endif()
 
@@ -92,8 +97,8 @@ if (glfw3_FOUND)
     set(HAVE_GLFW3 YES)
 
     list(APPEND _Application_Sources
-        examples/application/source/imgui_impl_glfw.cpp
-        examples/application/source/imgui_impl_glfw.h
+        src/imgui_impl_glfw.cpp
+        include/imgui_impl_glfw.h
     )
     target_link_libraries(imgui-node-editor PRIVATE
         glfw
@@ -101,7 +106,7 @@ if (glfw3_FOUND)
 endif()
 
 configure_file(
-    examples/application/source/config.h.in
+    include/config.h.in
     ${CMAKE_CURRENT_BINARY_DIR}/source/config.h
 )
 
@@ -152,12 +157,7 @@ set_property(TARGET imgui-node-editor PROPERTY FOLDER "examples")
     endif()
 
     add_executable(imgui-blueprint     examples/blueprints-example/blueprints-example.cpp
-    examples/blueprints-example/utilities/builders.h
-    examples/blueprints-example/utilities/drawing.h
-    examples/blueprints-example/utilities/widgets.h
-    examples/blueprints-example/utilities/builders.cpp
-    examples/blueprints-example/utilities/drawing.cpp
-    examples/blueprints-example/utilities/widgets.cpp ${_Example_Resources} ${_Example_CommonResources})
+ ${_Example_Resources} ${_Example_CommonResources})
     
         find_package(imgui REQUIRED)
     find_package(imgui_node_editor REQUIRED)

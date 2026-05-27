@@ -2315,6 +2315,18 @@ struct ImColor
     inline operator ImVec4() const                                  { return Value; }
 
     // FIXME-OBSOLETE: May need to obsolete/cleanup those helpers.
+    int r() const {
+        return Value.x * 255.0f;
+    }
+    int g() const {
+        return Value.y * 255.0f;
+    }
+    int b() const {
+        return Value.z * 255.0f;
+    }
+    int a() const {
+        return Value.w * 255.0f;
+    }
     inline void    SetHSV(float h, float s, float v, float a = 1.0f){ ImGui::ColorConvertHSVtoRGB(h, s, v, Value.x, Value.y, Value.z); Value.w = a; }
     static ImColor HSV(float h, float s, float v, float a = 1.0f)   { float r, g, b; ImGui::ColorConvertHSVtoRGB(h, s, v, r, g, b); return ImColor(r, g, b, a); }
 };

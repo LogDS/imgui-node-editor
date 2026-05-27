@@ -156,9 +156,4 @@ set_property(TARGET imgui-node-editor PROPERTY FOLDER "examples")
         )
     endif()
 
-    add_executable(imgui-blueprint     examples/blueprints-example/blueprints-example.cpp
- ${_Example_Resources} ${_Example_CommonResources})
-    
-        find_package(imgui REQUIRED)
-    find_package(imgui_node_editor REQUIRED)
-    target_link_libraries(imgui-blueprint  PRIVATE imgui imgui_node_editor imgui-node-editor)
+
